@@ -1,29 +1,4 @@
 {
-    "personal": {
-        "profile": {
-            "title": "Dominican willing to work remotely or relocated to some countries. IT Professional with more than 5 years of experience in several areas such as Development, Data Base and QA.",
-            "description": "Nice knowledge of JavaScript, TypeScript, React, Angular, NodeJS, HTML, CSS, etc. Able to convey ideas and communicate in English."
-        },
-        "info": {
-            "education": {
-                "degree": "Computer Science Degree",
-                "institution": "UASD",
-                "year": "2017"
-            },
-            "location": {
-                "city": "Santo Domingo",
-                "country": "Dominican Republic"
-            },
-            "languages": {
-                "spanish": "Native",
-                "english": "Intermediate"
-            },
-            "experience": {
-                "years": "+5 Years",
-                "level": "Development Lead"
-            }
-        }
-    },
     "skills": {
         "technical": [
             {

@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { useTranslation } from '../../contexts/LanguageContext'
 
 const Contact = () => {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -48,12 +50,11 @@ const Contact = () => {
           className='mb-12 text-center'
         >
           <h2 className='text-3xl md:text-4xl font-bold mb-2'>
-            <span className='text-primary'>Contact</span> Me
+            <span className='text-primary'>{t('contact.title')}</span> {t('contact.subtitle')}
           </h2>
           <div className='w-16 h-1 bg-primary mx-auto mb-4'></div>
           <p className='text-white max-w-2xl mx-auto'>
-            Interested in working together? Feel free to reach out. I'm always open 
-            to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            {t('contact.description')}
           </p>
         </motion.div>
         
@@ -64,7 +65,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className='text-2xl font-semibold mb-6 text-primary'>Get In Touch</h3>
+            <h3 className='text-2xl font-semibold mb-6 text-primary'>{t('contact.getInTouch')}</h3>
             
             <div className='space-y-6'>
               <div className='flex items-start space-x-4'>
@@ -72,7 +73,7 @@ const Contact = () => {
                   <FaEnvelope size={20} />
                 </div>
                 <div>
-                  <h4 className='text-white font-medium mb-1'>Email</h4>
+                  <h4 className='text-white font-medium mb-1'>{t('contact.form.email')}</h4>
                   <p className='text-white'>Luishenriquezj007@gmail.com</p>
                 </div>
               </div>
@@ -82,7 +83,7 @@ const Contact = () => {
                   <FaPhone size={20} />
                 </div>
                 <div>
-                  <h4 className='text-white font-medium mb-1'>Phone</h4>
+                  <h4 className='text-white font-medium mb-1'>{t('contact.phone')}</h4>
                   <p className='text-white'>+1(809) 758-2190</p>
                 </div>
               </div>
@@ -92,8 +93,8 @@ const Contact = () => {
                   <FaMapMarkerAlt size={20} />
                 </div>
                 <div>
-                  <h4 className='text-white font-medium mb-1'>Location</h4>
-                  <p className='text-white'>Santo Domingo, Dominican Republic</p>
+                  <h4 className='text-white font-medium mb-1'>{t('about.info.location.title')}</h4>
+                  <p className='text-white'>{t('about.info.location.city')}, {t('about.info.location.country')}</p>
                 </div>
               </div>
 
@@ -112,7 +113,7 @@ const Contact = () => {
                   <FaGithub size={20} />
                 </div>
                 <div>
-                  <h4 className='text-white font-medium mb-1'>Nationality</h4>
+                  <h4 className='text-white font-medium mb-1'>{t('contact.nationality')}</h4>
                   <p className='text-white'>Dominican</p>
                 </div>
               </div>
@@ -125,7 +126,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className='text-2xl font-semibold mb-6 text-primary'>Send a Message</h3>
+            <h3 className='text-2xl font-semibold mb-6 text-primary'>{t('contact.sendMessage')}</h3>
             
             <form onSubmit={handleSubmit} className='space-y-4'>
               <div>
@@ -134,7 +135,7 @@ const Contact = () => {
                   name='name'
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder='Your Name'
+                  placeholder={t('contact.form.name')}
                   required
                   className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition'
                 />
@@ -146,7 +147,7 @@ const Contact = () => {
                   name='email'
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder='Your Email'
+                  placeholder={t('contact.form.email')}
                   required
                   className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition'
                 />
@@ -158,7 +159,7 @@ const Contact = () => {
                   name='subject'
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder='Subject'
+                  placeholder={t('contact.subject')}
                   required
                   className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition'
                 />
@@ -169,7 +170,7 @@ const Contact = () => {
                   name='message'
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder='Your Message'
+                  placeholder={t('contact.form.message')}
                   required
                   rows={5}
                   className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition resize-none'
@@ -183,7 +184,7 @@ const Contact = () => {
                 whileTap={{ scale: 0.98 }}
                 disabled={isSubmitted}
               >
-                {isSubmitted ? 'Message Sent!' : 'Send Message'}
+                {isSubmitted ? t('contact.messageSent') : t('contact.form.send')}
               </motion.button>
             </form>
           </motion.div>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import { useProjectsData } from '../../hooks/usePortfolioData'
+import { useTranslation } from '../../contexts/LanguageContext'
 
 const ProjectCard = ({ project }) => {
   return (
@@ -57,12 +58,13 @@ const ProjectCard = ({ project }) => {
 
 const Projects = () => {
   const { projects, loading, error } = useProjectsData()
+  const { t } = useTranslation()
 
   if (loading) {
     return (
       <section id='projects' className='py-24 bg-secondary'>
         <div className='container mx-auto px-4 text-center'>
-          <div className='text-white'>Loading projects...</div>
+          <div className='text-white'>{t('common.loading')}</div>
         </div>
       </section>
     )
@@ -72,7 +74,7 @@ const Projects = () => {
     return (
       <section id='projects' className='py-24 bg-secondary'>
         <div className='container mx-auto px-4 text-center'>
-          <div className='text-red-500'>Error loading projects: {error}</div>
+          <div className='text-red-500'>{t('common.error')}: {error}</div>
         </div>
       </section>
     )
@@ -89,12 +91,11 @@ const Projects = () => {
           className='mb-12 text-center'
         >
           <h2 className='text-3xl md:text-4xl font-bold mb-2'>
-            <span className='text-primary'>My</span> Projects
+            <span className='text-primary'>{t('projects.title')}</span> {t('projects.subtitle')}
           </h2>
           <div className='w-16 h-1 bg-primary mx-auto mb-4'></div>
           <p className='text-white max-w-2xl mx-auto'>
-            Here are some of the notable projects I've worked on. Each project showcases
-            my skills in development and problem solving.
+            {t('projects.description')}
           </p>
         </motion.div>
         

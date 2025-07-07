@@ -1,7 +1,13 @@
 import { motion } from 'framer-motion'
 import { useExperienceData } from '../../hooks/usePortfolioData'
+import { useTranslation } from '../../contexts/LanguageContext'
 
 const ExperienceItem = ({ position, company, period, location, responsibilities }) => {
+  const { t } = useTranslation()
+  
+  // Handle translation of "Current" period
+  const translatedPeriod = period === 'Current' ? t('common.current') : period
+
   return (
     <motion.div 
       className='mb-10 relative pl-8 border-l-2 border-primary'
@@ -15,7 +21,7 @@ const ExperienceItem = ({ position, company, period, location, responsibilities 
       <div className='mb-2 flex flex-wrap gap-2'>
         <span className='text-white font-medium'>{company}</span>
         <span className='text-gray-400'>|</span>
-        <span className='text-gray-400'>{period}</span>
+        <span className='text-gray-400'>{translatedPeriod}</span>
         <span className='text-gray-400'>|</span>
         <span className='text-gray-400'>{location}</span>
       </div>
@@ -30,12 +36,13 @@ const ExperienceItem = ({ position, company, period, location, responsibilities 
 
 const Experience = () => {
   const { experience, loading, error } = useExperienceData()
+  const { t } = useTranslation()
 
   if (loading) {
     return (
       <section id='experience' className='py-24 bg-secondary'>
         <div className='container mx-auto px-4 text-center'>
-          <div className='text-white'>Loading experience...</div>
+          <div className='text-white'>{t('common.loading')}</div>
         </div>
       </section>
     )
@@ -45,7 +52,7 @@ const Experience = () => {
     return (
       <section id='experience' className='py-24 bg-secondary'>
         <div className='container mx-auto px-4 text-center'>
-          <div className='text-red-500'>Error loading experience: {error}</div>
+          <div className='text-red-500'>{t('common.error')}: {error}</div>
         </div>
       </section>
     )
@@ -62,11 +69,11 @@ const Experience = () => {
           className='mb-12 text-center'
         >
           <h2 className='text-3xl md:text-4xl font-bold mb-2'>
-            <span className='text-primary'>Professional</span> Experience
+            <span className='text-primary'>{t('experience.title')}</span> {t('experience.subtitle')}
           </h2>
           <div className='w-16 h-1 bg-primary mx-auto mb-4'></div>
           <p className='text-white max-w-2xl mx-auto'>
-            My professional journey showcases my development expertise and growth in the IT industry.
+            {t('experience.description')}
           </p>
         </motion.div>
         

@@ -1,0 +1,101 @@
+{
+    "navbar": {
+        "about": "About",
+        "skills": "Skills",
+        "experience": "Experience",
+        "projects": "Projects",
+        "contact": "Contact",
+        "language": "Language"
+    },
+    "languages": {
+        "en": "English",
+        "es": "Spanish"
+    },
+    "hero": {
+        "greeting": "Hello, I'm",
+        "title": "Luis Henriquez",
+        "subtitle": "Development and Technology Lead",
+        "description": "Passionate Full-Stack Developer with 5+ years of experience in JavaScript, React, Angular, and modern web technologies.",
+        "viewWork": "View My Work",
+        "contactMe": "Contact Me"
+    },
+    "about": {
+        "title": "About",
+        "subtitle": "Me",
+        "profile": {
+            "title": "Profile",
+            "description1": "Dominican willing to work remotely or relocated to some countries. IT Professional with more than 7 years of experience in several areas such as Development, Data Base and QA.",
+            "description2": "Nice knowledge of JavaScript, TypeScript, React, Angular, NodeJS, HTML, CSS, etc. Able to convey ideas and communicate in English."
+        },
+        "info": {
+            "education": {
+                "title": "Education",
+                "degree": "Computer Science Degree",
+                "institution": "UASD",
+                "year": "2017"
+            },
+            "location": {
+                "title": "Location",
+                "city": "Santo Domingo",
+                "country": "Dominican Republic"
+            },
+            "languages": {
+                "title": "Languages",
+                "spanish": "Spanish: Native",
+                "english": "English: Intermediate"
+            },
+            "experience": {
+                "title": "Experience",
+                "years": "+7 years",
+                "level": "Development Lead"
+            }
+        }
+    },
+    "skills": {
+        "title": "My",
+        "subtitle": "Skills",
+        "categories": {
+            "technical": "Technical Skills",
+            "professional": "Professional Skills",
+            "soft": "Soft Skills"
+        }
+    },
+    "experience": {
+        "title": "Professional",
+        "subtitle": "Experience",
+        "description": "My professional journey showcases my development expertise and growth in the IT industry."
+    },
+    "projects": {
+        "title": "My",
+        "subtitle": "Projects",
+        "description": "Here are some of the notable projects I've worked on. Each project showcases my skills in development and problem solving."
+    },
+    "contact": {
+        "title": "Get In",
+        "subtitle": "Touch",
+        "description": "Interested in working together? Feel free to reach out. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+        "getInTouch": "Get In Touch",
+        "sendMessage": "Send a Message",
+        "phone": "Phone",
+        "nationality": "Nationality",
+        "messageSent": "Message Sent!",
+        "subject": "Subject",
+        "form": {
+            "name": "Your Name",
+            "email": "Your Email",
+            "message": "Your Message",
+            "send": "Send Message"
+        }
+    },
+    "footer": {
+        "rights": "All rights reserved.",
+        "madeWith": "Made with",
+        "and": "and"
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "Error loading data",
+        "current": "Current",
+        "scrollDown": "Scroll Down"
+    }
+}
