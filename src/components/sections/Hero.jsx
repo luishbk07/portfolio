@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
 import { FaArrowDown } from 'react-icons/fa'
+import { useTranslation } from '../../contexts/LanguageContext'
 
 const Hero = () => {
+  const { t } = useTranslation()
+
   return (
     <section id='home' className='min-h-screen relative flex items-center justify-center overflow-hidden bg-secondary-dark'>
       <div className='absolute inset-0 z-0'>
@@ -18,8 +21,8 @@ const Hero = () => {
             className='mb-4'
           >
             <h1 className='text-4xl md:text-6xl font-bold'>
-              <span className='text-white'>Hi, I'm </span>
-              <span className='text-primary'>Luis Henríquez</span>
+              <span className='text-white'>{t('hero.greeting')} </span>
+              <span className='text-primary'>{t('hero.title')}</span>
             </h1>
           </motion.div>
           
@@ -30,7 +33,7 @@ const Hero = () => {
             className='mb-8'
           >
             <h2 className='text-2xl md:text-3xl text-white'>
-              <span className='font-semibold'>Development Lead - Full-Stack Developer</span>
+              <span className='font-semibold'>{t('hero.subtitle')}</span>
             </h2>
           </motion.div>
           
@@ -41,8 +44,7 @@ const Hero = () => {
             className='mb-6 max-w-2xl'
           >
             <p className='text-lg text-white'>
-              IT Professional with over 7 years of experience in several areas such as Development, 
-              Data Base, and QA. Strong knowledge of JavaScript, TypeScript, React, Angular, and Node.js.
+              {t('hero.description')}
             </p>
           </motion.div>
           
@@ -56,13 +58,13 @@ const Hero = () => {
               href='#projects' 
               className='px-8 py-3 bg-primary hover:bg-primary-dark text-secondary font-semibold rounded-md transition-colors'
             >
-              View My Work
+              {t('hero.viewWork')}
             </a>
             <a 
               href='#contact' 
               className='px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-secondary font-semibold rounded-md transition-colors'
             >
-              Contact Me
+              {t('hero.contactMe')}
             </a>
           </motion.div>
         </div>
@@ -78,7 +80,7 @@ const Hero = () => {
           href='#about'
           className='flex flex-col items-center text-white hover:text-primary transition-colors'
         >
-          <span className='mb-2'>Scroll Down</span>
+          <span className='mb-2'>{t('common.scrollDown')}</span>
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}

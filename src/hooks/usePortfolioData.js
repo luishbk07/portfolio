@@ -1,21 +1,23 @@
 import { useState, useEffect } from 'react'
-import portfolioData from '../data/portfolio.json'
+import { usePortfolioContent } from '../contexts/LanguageContext'
 
 export const usePortfolioData = () => {
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const portfolioData = usePortfolioContent()
+  const [data, setData] = useState(portfolioData)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
   useEffect(() => {
     try {
-      // Simulate async loading (in case you want to fetch from API later)
+      setLoading(true)
       setData(portfolioData)
-      setLoading(false)
+      setError(null)
     } catch (err) {
       setError(err.message)
+    } finally {
       setLoading(false)
     }
-  }, [])
+  }, [portfolioData])
 
   return { data, loading, error }
 }
@@ -48,11 +50,12 @@ export const useExperienceData = () => {
   }
 }
 
+// Note: Personal data is now handled by translations, not portfolio data
+// Keeping this for backward compatibility but it will return null
 export const usePersonalData = () => {
-  const { data, loading, error } = usePortfolioData()
   return {
-    personal: data?.personal || null,
-    loading,
-    error
+    personal: null,
+    loading: false,
+    error: null
   }
 } 

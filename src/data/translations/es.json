@@ -1,0 +1,101 @@
+{
+    "navbar": {
+        "about": "Acerca de",
+        "skills": "Habilidades",
+        "experience": "Experiencia",
+        "projects": "Proyectos",
+        "contact": "Contacto",
+        "language": "Idioma"
+    },
+    "languages": {
+        "en": "Inglés",
+        "es": "Español"
+    },
+    "hero": {
+        "greeting": "Hola, soy",
+        "title": "Luis Henriquez",
+        "subtitle": "Líder de Desarrollo y Tecnología",
+        "description": "Desarrollador Full-Stack apasionado con más de 7 años de experiencia en JavaScript, React, Angular y tecnologías web modernas.",
+        "viewWork": "Ver Mi Trabajo",
+        "contactMe": "Contáctame"
+    },
+    "about": {
+        "title": "Acerca",
+        "subtitle": "de Mí",
+        "profile": {
+            "title": "Perfil",
+            "description1": "Dominicano dispuesto a trabajar de forma remota o relocalizarse a algunos países. Profesional de TI con más de 7 años de experiencia en varias áreas como Desarrollo, Base de Datos y QA.",
+            "description2": "Buen conocimiento de JavaScript, TypeScript, React, Angular, NodeJS, HTML, CSS, etc. Capaz de transmitir ideas y comunicarse en inglés."
+        },
+        "info": {
+            "education": {
+                "title": "Educación",
+                "degree": "Licenciatura en Ciencias de la Computación",
+                "institution": "UASD",
+                "year": "2017"
+            },
+            "location": {
+                "title": "Ubicación",
+                "city": "Santo Domingo",
+                "country": "República Dominicana"
+            },
+            "languages": {
+                "title": "Idiomas",
+                "spanish": "Español: Nativo",
+                "english": "Inglés: Intermedio"
+            },
+            "experience": {
+                "title": "Experiencia",
+                "years": "+7 años",
+                "level": "Líder de Desarrollo"
+            }
+        }
+    },
+    "skills": {
+        "title": "Mis",
+        "subtitle": "Habilidades",
+        "categories": {
+            "technical": "Habilidades Técnicas",
+            "professional": "Habilidades Profesionales",
+            "soft": "Habilidades Blandas"
+        }
+    },
+    "experience": {
+        "title": "Experiencia",
+        "subtitle": "Profesional",
+        "description": "Mi trayectoria profesional demuestra mi experiencia en desarrollo y crecimiento en la industria de TI."
+    },
+    "projects": {
+        "title": "Mis",
+        "subtitle": "Proyectos",
+        "description": "Aquí están algunos de los proyectos más destacados en los que he trabajado. Cada proyecto demuestra mis habilidades en desarrollo y resolución de problemas."
+    },
+    "contact": {
+        "title": "Ponte en",
+        "subtitle": "Contacto",
+        "description": "¿Interesado en trabajar juntos? No dudes en contactarme. Siempre estoy abierto a discutir nuevos proyectos, ideas creativas u oportunidades para ser parte de tu visión.",
+        "getInTouch": "Ponte en Contacto",
+        "sendMessage": "Enviar un Mensaje",
+        "phone": "Teléfono",
+        "nationality": "Nacionalidad",
+        "messageSent": "¡Mensaje Enviado!",
+        "subject": "Asunto",
+        "form": {
+            "name": "Tu Nombre",
+            "email": "Tu Correo",
+            "message": "Tu Mensaje",
+            "send": "Enviar Mensaje"
+        }
+    },
+    "footer": {
+        "rights": "Todos los derechos reservados.",
+        "madeWith": "Hecho con",
+        "and": "y"
+    },
+    "common": {
+        "loading": "Cargando...",
+        "error": "Error al cargar datos",
+        "current": "Actual",
+        "scrollDown": "Deslizar Abajo"
+    }
+}

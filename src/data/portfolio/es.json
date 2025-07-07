@@ -1,0 +1,191 @@
+{
+    "skills": {
+        "technical": [
+            {
+                "name": "JavaScript/TypeScript",
+                "percentage": 90
+            },
+            {
+                "name": "React/Node.js",
+                "percentage": 85
+            },
+            {
+                "name": "Angular",
+                "percentage": 80
+            },
+            {
+                "name": "HTML/CSS",
+                "percentage": 90
+            },
+            {
+                "name": "Prompt Engineering",
+                "percentage": 85
+            }
+        ],
+        "professional": [
+            {
+                "name": "Desarrollo Web",
+                "percentage": 90
+            },
+            {
+                "name": "CI/CD",
+                "percentage": 85
+            },
+            {
+                "name": "SCRUM",
+                "percentage": 80
+            },
+            {
+                "name": "Diseño de Base de Datos",
+                "percentage": 75
+            }
+        ],
+        "soft": [
+            {
+                "name": "Trabajo en Equipo",
+                "percentage": 95
+            },
+            {
+                "name": "Empatía",
+                "percentage": 90
+            },
+            {
+                "name": "Comunicación",
+                "percentage": 85
+            },
+            {
+                "name": "Resolución de Problemas",
+                "percentage": 90
+            }
+        ]
+    },
+    "experience": [
+        {
+            "id": 1,
+            "position": "Líder de Desarrollo y Tecnología",
+            "company": "MTPLY, LLC",
+            "period": "Actual",
+            "location": "Dallas, Texas, EUA (Remoto)",
+            "responsibilities": [
+                "Desarrollo de productos (JS, React, NodeJS)",
+                "Mantenimiento de aplicaciones (JS, React, NodeJS)",
+                "Implementar programación funcional",
+                "Liderar proyectos \"Pouch\" y otros",
+                "Prompt Engineering e integración de IA",
+                "Asistencia a mesa de ayuda (Jira)",
+                "Desarrolló: Sitio Pouch Agent, sitio web Fastlane, Solaris Insure"
+            ]
+        },
+        {
+            "id": 2,
+            "position": "Desarrollador Full-Stack",
+            "company": "ATL-Software",
+            "period": "2022",
+            "location": "República Dominicana",
+            "responsibilities": [
+                "Levantamiento de requerimientos",
+                "Desarrollo de productos (Angular 11+, Bootstrap)",
+                "Mantenimiento de aplicaciones (Angular 11+, PHP)",
+                "Implementar programación funcional",
+                "Implementar CI/CD",
+                "Asistencia a mesa de ayuda (Jira)"
+            ]
+        },
+        {
+            "id": 3,
+            "position": "Desarrollador Full-Stack",
+            "company": "UniL S.A.",
+            "period": "2020-2022",
+            "location": "República Dominicana",
+            "responsibilities": [
+                "Levantamiento de requerimientos",
+                "Desarrollo de productos (JavaScript, Angular 11+, Bootstrap)",
+                "Creación de APIs (NetCore 3.1)",
+                "Implementar programación funcional",
+                "Implementar CI/CD",
+                "Asistencia a mesa de ayuda (Jira)"
+            ]
+        },
+        {
+            "id": 4,
+            "position": "Desarrollador Web",
+            "company": "BPM Factory",
+            "period": "2015-2016",
+            "location": "República Dominicana",
+            "responsibilities": [
+                "Desarrollo y mantenimiento web (PHP, JavaScript)",
+                "Integración de servicios web con Bizagi",
+                "Diseño de Interfaces de Usuario",
+                "Diseño de Base de Datos"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "id": 1,
+            "title": "Sitio Pouch Agent",
+            "description": "Plataforma para agentes de seguros con funciones de gestión de pólizas y seguimiento de clientes.",
+            "technologies": [
+                "React",
+                "NodeJS",
+                "JavaScript"
+            ],
+            "image": "https://placehold.co/600x400/121212/FFCC00?text=Pouch+Agent",
+            "demo": "https://agent.pouchinsurance.com/",
+            "github": null
+        },
+        {
+            "id": 2,
+            "title": "Sitio Web Fastlane",
+            "description": "Sitio web de compañía de seguros con información sobre servicios y formularios de cotización.",
+            "technologies": [
+                "JavaScript",
+                "React",
+                "NodeJS"
+            ],
+            "image": "https://placehold.co/600x400/121212/FFCC00?text=Fastlane",
+            "demo": "https://Fastlane.insure/",
+            "github": null
+        },
+        {
+            "id": 3,
+            "title": "Solaris Insure",
+            "description": "Marketplace de seguros para la región del sur de California.",
+            "technologies": [
+                "JavaScript",
+                "React",
+                "NodeJS"
+            ],
+            "image": "https://placehold.co/600x400/121212/FFCC00?text=Solaris+Insure",
+            "demo": "https://Solaris.insure/",
+            "github": null
+        },
+        {
+            "id": 4,
+            "title": "Gig Cover",
+            "description": "Plataforma de seguros para trabajadores independientes desarrollada usando Prompt Engineering y técnicas de desarrollo impulsadas por IA.",
+            "technologies": [
+                "Prompt Engineering",
+                "JavaScript",
+                "React",
+                "Integración de IA"
+            ],
+            "image": "https://placehold.co/600x400/121212/FFCC00?text=Gig+Cover",
+            "demo": "https://gigcover.insure/",
+            "github": null
+        },
+        {
+            "id": 5,
+            "title": "Productos ATL Software",
+            "description": "Varias aplicaciones desarrolladas con Angular para ATL-Software.",
+            "technologies": [
+                "Angular 11+",
+                "Bootstrap",
+                "PHP"
+            ],
+            "image": "https://placehold.co/600x400/121212/FFCC00?text=ATL+Software",
+            "demo": null,
+            "github": null
+        }
+    ]
+}

@@ -1,6 +1,8 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { useTranslation } from '../../contexts/LanguageContext'
 
 const Footer = () => {
+  const { t } = useTranslation()
   const currentYear = new Date().getFullYear()
   
   return (
@@ -9,7 +11,7 @@ const Footer = () => {
         <div className='flex flex-col md:flex-row justify-between items-center'>
           <div className='mb-4 md:mb-0'>
             <p className='text-white text-center md:text-left'>
-              © {currentYear} Luis Henríquez. All rights reserved.
+              © {currentYear} Luis Henríquez. {t('footer.rights')}
             </p>
           </div>
           

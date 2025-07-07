@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useSkillsData } from '../../hooks/usePortfolioData'
+import { useTranslation } from '../../contexts/LanguageContext'
 
 const SkillProgress = ({ skill, percentage }) => {
   const progressRef = useRef(null)
@@ -26,12 +27,13 @@ const SkillProgress = ({ skill, percentage }) => {
 
 const Skills = () => {
   const { skills, loading, error } = useSkillsData()
+  const { t } = useTranslation()
 
   if (loading) {
     return (
       <section id='skills' className='py-24 bg-secondary-light'>
         <div className='container mx-auto px-4 text-center'>
-          <div className='text-white'>Loading skills...</div>
+          <div className='text-white'>{t('common.loading')}</div>
         </div>
       </section>
     )
@@ -41,7 +43,7 @@ const Skills = () => {
     return (
       <section id='skills' className='py-24 bg-secondary-light'>
         <div className='container mx-auto px-4 text-center'>
-          <div className='text-red-500'>Error loading skills: {error}</div>
+          <div className='text-red-500'>{t('common.error')}: {error}</div>
         </div>
       </section>
     )
@@ -60,7 +62,7 @@ const Skills = () => {
           className='mb-12 text-center'
         >
           <h2 className='text-3xl md:text-4xl font-bold mb-2'>
-            <span className='text-primary'>My</span> Skills
+            <span className='text-primary'>{t('skills.title')}</span> {t('skills.subtitle')}
           </h2>
           <div className='w-16 h-1 bg-primary mx-auto'></div>
         </motion.div>
@@ -72,7 +74,7 @@ const Skills = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className='text-2xl font-semibold mb-6 text-primary'>Technical Skills</h3>
+            <h3 className='text-2xl font-semibold mb-6 text-primary'>{t('skills.categories.technical')}</h3>
             {skills.technical.map((skill, index) => (
               <SkillProgress key={index} skill={skill.name} percentage={skill.percentage} />
             ))}
@@ -84,7 +86,7 @@ const Skills = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h3 className='text-2xl font-semibold mb-6 text-primary'>Professional Skills</h3>
+            <h3 className='text-2xl font-semibold mb-6 text-primary'>{t('skills.categories.professional')}</h3>
             {skills.professional.map((skill, index) => (
               <SkillProgress key={index} skill={skill.name} percentage={skill.percentage} />
             ))}
@@ -96,7 +98,7 @@ const Skills = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className='text-2xl font-semibold mb-6 text-primary'>Soft Skills</h3>
+            <h3 className='text-2xl font-semibold mb-6 text-primary'>{t('skills.categories.soft')}</h3>
             {skills.soft.map((skill, index) => (
               <SkillProgress key={index} skill={skill.name} percentage={skill.percentage} />
             ))}
