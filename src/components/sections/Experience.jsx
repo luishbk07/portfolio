@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useExperienceData } from '../../hooks/usePortfolioData'
 
 const ExperienceItem = ({ position, company, period, location, responsibilities }) => {
   return (
@@ -28,62 +29,27 @@ const ExperienceItem = ({ position, company, period, location, responsibilities 
 }
 
 const Experience = () => {
-  const jobs = [
-    {
-      position: 'Development and Technology Lead',
-      company: 'MTPLY, LLC',
-      period: 'Current',
-      location: 'Dallas, Texas, USA (Remote)',
-      responsibilities: [
-        'Product development (JS, React, NodeJS)',
-        'Maintenance of applications (JS, React, NodeJS)',
-        'Implement functional programming',
-        'Lead "Pouch" and other projects',
-        'Assistance to help desk (Jira)',
-        'Developed: Pouch Agent site, Fastlane website, Solaris Insure'
-      ]
-    },
-    {
-      position: 'Full-Stack Developer',
-      company: 'ATL-Software',
-      period: '2022',
-      location: 'Dominican Republic',
-      responsibilities: [
-        'Survey of requirements',
-        'Product development (Angular 11+, Bootstrap)',
-        'Maintenance of applications (Angular 11+, PHP)',
-        'Implement functional programming',
-        'Implement CI/CD',
-        'Assistance to help desk (Jira)'
-      ]
-    },
-    {
-      position: 'Full-Stack Developer',
-      company: 'UniL S.A.',
-      period: '2020-2022',
-      location: 'Dominican Republic',
-      responsibilities: [
-        'Survey of requirements',
-        'Product development (JavaScript, Angular 11+, Bootstrap)',
-        'Creation of APIs (NetCore 3.1)',
-        'Implement functional programming',
-        'Implement CI/CD',
-        'Assistance to help desk (Jira)'
-      ]
-    },
-    {
-      position: 'Web Developer',
-      company: 'BPM Factory',
-      period: '2015-2016',
-      location: 'Dominican Republic',
-      responsibilities: [
-        'Web development and maintenance (PHP, JavaScript)',
-        'Integration of web services with Bizagi',
-        'Design of User Interfaces',
-        'Database Design'
-      ]
-    }
-  ]
+  const { experience, loading, error } = useExperienceData()
+
+  if (loading) {
+    return (
+      <section id='experience' className='py-24 bg-secondary'>
+        <div className='container mx-auto px-4 text-center'>
+          <div className='text-white'>Loading experience...</div>
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section id='experience' className='py-24 bg-secondary'>
+        <div className='container mx-auto px-4 text-center'>
+          <div className='text-red-500'>Error loading experience: {error}</div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section id='experience' className='py-24 bg-secondary'>
@@ -105,9 +71,9 @@ const Experience = () => {
         </motion.div>
         
         <div className='max-w-3xl mx-auto'>
-          {jobs.map((job, index) => (
+          {experience.map((job) => (
             <ExperienceItem 
-              key={index}
+              key={job.id}
               position={job.position}
               company={job.company}
               period={job.period}

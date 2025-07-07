@@ -1,0 +1,216 @@
+{
+    "personal": {
+        "profile": {
+            "title": "Dominican willing to work remotely or relocated to some countries. IT Professional with more than 5 years of experience in several areas such as Development, Data Base and QA.",
+            "description": "Nice knowledge of JavaScript, TypeScript, React, Angular, NodeJS, HTML, CSS, etc. Able to convey ideas and communicate in English."
+        },
+        "info": {
+            "education": {
+                "degree": "Computer Science Degree",
+                "institution": "UASD",
+                "year": "2017"
+            },
+            "location": {
+                "city": "Santo Domingo",
+                "country": "Dominican Republic"
+            },
+            "languages": {
+                "spanish": "Native",
+                "english": "Intermediate"
+            },
+            "experience": {
+                "years": "+5 Years",
+                "level": "Development Lead"
+            }
+        }
+    },
+    "skills": {
+        "technical": [
+            {
+                "name": "JavaScript/TypeScript",
+                "percentage": 90
+            },
+            {
+                "name": "React/Node.js",
+                "percentage": 85
+            },
+            {
+                "name": "Angular",
+                "percentage": 80
+            },
+            {
+                "name": "HTML/CSS",
+                "percentage": 90
+            },
+            {
+                "name": "Prompt Engineering",
+                "percentage": 85
+            }
+        ],
+        "professional": [
+            {
+                "name": "Web Development",
+                "percentage": 90
+            },
+            {
+                "name": "CI/CD",
+                "percentage": 85
+            },
+            {
+                "name": "SCRUM",
+                "percentage": 80
+            },
+            {
+                "name": "Database Design",
+                "percentage": 75
+            }
+        ],
+        "soft": [
+            {
+                "name": "Teamwork",
+                "percentage": 95
+            },
+            {
+                "name": "Empathy",
+                "percentage": 90
+            },
+            {
+                "name": "Communication",
+                "percentage": 85
+            },
+            {
+                "name": "Problem Solving",
+                "percentage": 90
+            }
+        ]
+    },
+    "experience": [
+        {
+            "id": 1,
+            "position": "Development and Technology Lead",
+            "company": "MTPLY, LLC",
+            "period": "Current",
+            "location": "Dallas, Texas, USA (Remote)",
+            "responsibilities": [
+                "Product development (JS, React, NodeJS)",
+                "Maintenance of applications (JS, React, NodeJS)",
+                "Implement functional programming",
+                "Lead \"Pouch\" and other projects",
+                "Prompt Engineering and AI integration",
+                "Assistance to help desk (Jira)",
+                "Developed: Pouch Agent site, Fastlane website, Solaris Insure"
+            ]
+        },
+        {
+            "id": 2,
+            "position": "Full-Stack Developer",
+            "company": "ATL-Software",
+            "period": "2022",
+            "location": "Dominican Republic",
+            "responsibilities": [
+                "Survey of requirements",
+                "Product development (Angular 11+, Bootstrap)",
+                "Maintenance of applications (Angular 11+, PHP)",
+                "Implement functional programming",
+                "Implement CI/CD",
+                "Assistance to help desk (Jira)"
+            ]
+        },
+        {
+            "id": 3,
+            "position": "Full-Stack Developer",
+            "company": "UniL S.A.",
+            "period": "2020-2022",
+            "location": "Dominican Republic",
+            "responsibilities": [
+                "Survey of requirements",
+                "Product development (JavaScript, Angular 11+, Bootstrap)",
+                "Creation of APIs (NetCore 3.1)",
+                "Implement functional programming",
+                "Implement CI/CD",
+                "Assistance to help desk (Jira)"
+            ]
+        },
+        {
+            "id": 4,
+            "position": "Web Developer",
+            "company": "BPM Factory",
+            "period": "2015-2016",
+            "location": "Dominican Republic",
+            "responsibilities": [
+                "Web development and maintenance (PHP, JavaScript)",
+                "Integration of web services with Bizagi",
+                "Design of User Interfaces",
+                "Database Design"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "id": 1,
+            "title": "Pouch Agent Site",
+            "description": "Insurance agent platform with policy management and client tracking features.",
+            "technologies": [
+                "React",
+                "NodeJS",
+                "JavaScript"
+            ],
+            "image": "https://placehold.co/600x400/121212/FFCC00?text=Pouch+Agent",
+            "demo": "https://agent.pouchinsurance.com/",
+            "github": null
+        },
+        {
+            "id": 2,
+            "title": "Fastlane Website",
+            "description": "Insurance company website with information about services and quote forms.",
+            "technologies": [
+                "JavaScript",
+                "React",
+                "NodeJS"
+            ],
+            "image": "https://placehold.co/600x400/121212/FFCC00?text=Fastlane",
+            "demo": "https://Fastlane.insure/",
+            "github": null
+        },
+        {
+            "id": 3,
+            "title": "Solaris Insure",
+            "description": "Insurance marketplace for the Southern California region.",
+            "technologies": [
+                "JavaScript",
+                "React",
+                "NodeJS"
+            ],
+            "image": "https://placehold.co/600x400/121212/FFCC00?text=Solaris+Insure",
+            "demo": "https://Solaris.insure/",
+            "github": null
+        },
+        {
+            "id": 4,
+            "title": "Gig Cover",
+            "description": "Insurance platform for gig workers developed using prompt engineering and AI-driven development techniques.",
+            "technologies": [
+                "Prompt Engineering",
+                "JavaScript",
+                "React",
+                "AI Integration"
+            ],
+            "image": "https://placehold.co/600x400/121212/FFCC00?text=Gig+Cover",
+            "demo": "https://gigcover.insure/",
+            "github": null
+        },
+        {
+            "id": 5,
+            "title": "ATL Software Products",
+            "description": "Various applications developed with Angular for ATL-Software.",
+            "technologies": [
+                "Angular 11+",
+                "Bootstrap",
+                "PHP"
+            ],
+            "image": "https://placehold.co/600x400/121212/FFCC00?text=ATL+Software",
+            "demo": null,
+            "github": null
+        }
+    ]
+}

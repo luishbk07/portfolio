@@ -41,7 +41,7 @@ const Hero = () => {
             className='mb-6 max-w-2xl'
           >
             <p className='text-lg text-white'>
-              IT Professional with over 5 years of experience in several areas such as Development, 
+              IT Professional with over 7 years of experience in several areas such as Development, 
               Data Base, and QA. Strong knowledge of JavaScript, TypeScript, React, Angular, and Node.js.
             </p>
           </motion.div>
