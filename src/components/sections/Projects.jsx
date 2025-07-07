@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { useProjectsData } from '../../hooks/usePortfolioData'
 
 const ProjectCard = ({ project }) => {
   return (
@@ -55,39 +56,27 @@ const ProjectCard = ({ project }) => {
 }
 
 const Projects = () => {
-  const projects = [
-    {
-      id: 1,
-      title: 'Pouch Agent Site',
-      description: 'Insurance agent platform with policy management and client tracking features.',
-      technologies: ['React', 'NodeJS', 'JavaScript'],
-      image: 'https://placehold.co/600x400/121212/FFCC00?text=Pouch+Agent',
-      demo: 'https://agent.pouchinsurance.com/'
-    },
-    {
-      id: 2,
-      title: 'Fastlane Website',
-      description: 'Insurance company website with information about services and quote forms.',
-      technologies: ['JavaScript', 'React', 'NodeJS'],
-      image: 'https://placehold.co/600x400/121212/FFCC00?text=Fastlane',
-      demo: 'https://Fastlane.insure/'
-    },
-    {
-      id: 3,
-      title: 'Solaris Insure',
-      description: 'Insurance marketplace for the Southern California region.',
-      technologies: ['JavaScript', 'React', 'NodeJS'],
-      image: 'https://placehold.co/600x400/121212/FFCC00?text=Solaris+Insure',
-      demo: 'https://Solaris.insure/'
-    },
-    {
-      id: 4,
-      title: 'ATL Software Products',
-      description: 'Various applications developed with Angular for ATL-Software.',
-      technologies: ['Angular 11+', 'Bootstrap', 'PHP'],
-      image: 'https://placehold.co/600x400/121212/FFCC00?text=ATL+Software',
-    },
-  ]
+  const { projects, loading, error } = useProjectsData()
+
+  if (loading) {
+    return (
+      <section id='projects' className='py-24 bg-secondary'>
+        <div className='container mx-auto px-4 text-center'>
+          <div className='text-white'>Loading projects...</div>
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section id='projects' className='py-24 bg-secondary'>
+        <div className='container mx-auto px-4 text-center'>
+          <div className='text-red-500'>Error loading projects: {error}</div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section id='projects' className='py-24 bg-secondary'>

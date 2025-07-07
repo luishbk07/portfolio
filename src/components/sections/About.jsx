@@ -1,6 +1,31 @@
 import { motion } from 'framer-motion'
+import { usePersonalData } from '../../hooks/usePortfolioData'
 
 const About = () => {
+  const { personal, loading, error } = usePersonalData()
+
+  if (loading) {
+    return (
+      <section id='about' className='py-24 bg-secondary'>
+        <div className='container mx-auto px-4 text-center'>
+          <div className='text-white'>Loading about information...</div>
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section id='about' className='py-24 bg-secondary'>
+        <div className='container mx-auto px-4 text-center'>
+          <div className='text-red-500'>Error loading about information: {error}</div>
+        </div>
+      </section>
+    )
+  }
+
+  if (!personal) return null
+
   return (
     <section id='about' className='py-24 bg-secondary'>
       <div className='container mx-auto px-4'>
@@ -27,13 +52,10 @@ const About = () => {
           >
             <h3 className='text-2xl font-semibold mb-4 text-primary'>Profile</h3>
             <p className='text-white mb-4'>
-              Dominican willing to work remotely or relocated to some 
-              countries. IT Professional with more than 5 years of experience in 
-              several areas such as Development, Data Base and QA.
+              {personal.profile.title}
             </p>
             <p className='text-white'>
-              Nice knowledge of JavaScript, TypeScript, React, Angular, NodeJS, 
-              HTML, CSS, etc. Able to convey ideas and communicate in English.
+              {personal.profile.description}
             </p>
           </motion.div>
           
@@ -46,23 +68,23 @@ const About = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
               <div className='bg-secondary-light p-5 rounded-lg'>
                 <h4 className='text-xl font-semibold mb-2 text-primary'>Education</h4>
-                <p className='text-white'>Computer Science Degree</p>
-                <p className='text-white text-sm'>UASD (2017)</p>
+                <p className='text-white'>{personal.info.education.degree}</p>
+                <p className='text-white text-sm'>{personal.info.education.institution} ({personal.info.education.year})</p>
               </div>
               <div className='bg-secondary-light p-5 rounded-lg'>
                 <h4 className='text-xl font-semibold mb-2 text-primary'>Location</h4>
-                <p className='text-white'>Santo Domingo</p>
-                <p className='text-white text-sm'>Dominican Republic</p>
+                <p className='text-white'>{personal.info.location.city}</p>
+                <p className='text-white text-sm'>{personal.info.location.country}</p>
               </div>
               <div className='bg-secondary-light p-5 rounded-lg'>
                 <h4 className='text-xl font-semibold mb-2 text-primary'>Languages</h4>
-                <p className='text-white'>Spanish: Native</p>
-                <p className='text-white'>English: Intermediate</p>
+                <p className='text-white'>Spanish: {personal.info.languages.spanish}</p>
+                <p className='text-white'>English: {personal.info.languages.english}</p>
               </div>
               <div className='bg-secondary-light p-5 rounded-lg'>
                 <h4 className='text-xl font-semibold mb-2 text-primary'>Experience</h4>
-                <p className='text-white'>+5 Years</p>
-                <p className='text-white text-sm'>Development Lead</p>
+                <p className='text-white'>{personal.info.experience.years}</p>
+                <p className='text-white text-sm'>{personal.info.experience.level}</p>
               </div>
             </div>
           </motion.div>

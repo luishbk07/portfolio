@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { useSkillsData } from '../../hooks/usePortfolioData'
 
 const SkillProgress = ({ skill, percentage }) => {
   const progressRef = useRef(null)
@@ -24,27 +25,30 @@ const SkillProgress = ({ skill, percentage }) => {
 }
 
 const Skills = () => {
-  const techSkills = [
-    { name: 'JavaScript/TypeScript', percentage: 90 },
-    { name: 'React/Node.js', percentage: 85 },
-    { name: 'Angular', percentage: 80 },
-    { name: 'HTML/CSS', percentage: 90 },
-  ]
-  
-  const otherSkills = [
-    { name: 'Web Development', percentage: 90 },
-    { name: 'CI/CD', percentage: 85 },
-    { name: 'SCRUM', percentage: 80 },
-    { name: 'Database Design', percentage: 75 },
-  ]
-  
-  const softSkills = [
-    { name: 'Teamwork', percentage: 95 },
-    { name: 'Empathy', percentage: 90 },
-    { name: 'Communication', percentage: 85 },
-    { name: 'Problem Solving', percentage: 90 },
-  ]
-  
+  const { skills, loading, error } = useSkillsData()
+
+  if (loading) {
+    return (
+      <section id='skills' className='py-24 bg-secondary-light'>
+        <div className='container mx-auto px-4 text-center'>
+          <div className='text-white'>Loading skills...</div>
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section id='skills' className='py-24 bg-secondary-light'>
+        <div className='container mx-auto px-4 text-center'>
+          <div className='text-red-500'>Error loading skills: {error}</div>
+        </div>
+      </section>
+    )
+  }
+
+  if (!skills) return null
+
   return (
     <section id='skills' className='py-24 bg-secondary-light'>
       <div className='container mx-auto px-4'>
@@ -69,7 +73,7 @@ const Skills = () => {
             viewport={{ once: true }}
           >
             <h3 className='text-2xl font-semibold mb-6 text-primary'>Technical Skills</h3>
-            {techSkills.map((skill, index) => (
+            {skills.technical.map((skill, index) => (
               <SkillProgress key={index} skill={skill.name} percentage={skill.percentage} />
             ))}
           </motion.div>
@@ -81,7 +85,7 @@ const Skills = () => {
             viewport={{ once: true }}
           >
             <h3 className='text-2xl font-semibold mb-6 text-primary'>Professional Skills</h3>
-            {otherSkills.map((skill, index) => (
+            {skills.professional.map((skill, index) => (
               <SkillProgress key={index} skill={skill.name} percentage={skill.percentage} />
             ))}
           </motion.div>
@@ -93,7 +97,7 @@ const Skills = () => {
             viewport={{ once: true }}
           >
             <h3 className='text-2xl font-semibold mb-6 text-primary'>Soft Skills</h3>
-            {softSkills.map((skill, index) => (
+            {skills.soft.map((skill, index) => (
               <SkillProgress key={index} skill={skill.name} percentage={skill.percentage} />
             ))}
           </motion.div>
