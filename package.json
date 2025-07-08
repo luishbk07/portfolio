@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist -u \"luishbk07 <luishenriquezdj007@gmail.com>\" -r https://luishbk07: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@github.com/luishbk07/portfolio.git"
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
