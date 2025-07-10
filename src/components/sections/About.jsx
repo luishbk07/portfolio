@@ -28,7 +28,20 @@ const About = () => {
             viewport={{ once: true }}
             className='bg-secondary-light p-6 rounded-lg'
           >
-            <h3 className='text-2xl font-semibold mb-4 text-primary'>{t('about.profile.title')}</h3>
+            {/* Logo */}
+            <div className='flex justify-center mb-6'>
+              <motion.img
+                src='/favicon.svg'
+                alt='LuisDev Logo'
+                className='w-24 h-24 rounded-full bg-gradient-to-br from-gray-800 to-black p-2 shadow-lg'
+                initial={{ scale: 0, rotate: -180 }}
+                whileInView={{ scale: 1, rotate: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+              />
+            </div>
+            
+            <h3 className='text-2xl font-semibold mb-4 text-primary text-center'>{t('about.profile.title')}</h3>
             <p className='text-white mb-4'>
               {t('about.profile.description1')}
             </p>
