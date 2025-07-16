@@ -71,18 +71,20 @@
         "description": "Aquí están algunos de los proyectos más destacados en los que he trabajado. Cada proyecto demuestra mis habilidades en desarrollo y resolución de problemas."
     },
     "contact": {
-        "title": "Ponte en",
+        "title": "Ponte En",
         "subtitle": "Contacto",
         "description": "¿Interesado en trabajar juntos? No dudes en contactarme. Siempre estoy abierto a discutir nuevos proyectos, ideas creativas u oportunidades para ser parte de tu visión.",
         "getInTouch": "Ponte en Contacto",
         "sendMessage": "Enviar un Mensaje",
         "phone": "Teléfono",
         "nationality": "Nacionalidad",
-        "messageSent": "¡Mensaje Enviado!",
+        "messageSent": "¡Mensaje Enviado Exitosamente!",
+        "messageError": "Error al enviar mensaje. Por favor intenta de nuevo.",
+        "sending": "Enviando...",
         "subject": "Asunto",
         "form": {
             "name": "Nombre",
-            "email": "Correo",
+            "email": "Correo Electrónico",
             "message": "Tu Mensaje",
             "send": "Enviar Mensaje"
         }

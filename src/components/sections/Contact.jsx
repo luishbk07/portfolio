@@ -1,17 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { CheckCircle, Error } from '@mui/icons-material'
 import { useTranslation } from '../../contexts/LanguageContext'
+import { useEmailJS } from '../../hooks/useEmailJS'
 
 const Contact = () => {
   const { t } = useTranslation()
+  const { sendEmail, isLoading, error, success, resetStates } = useEmailJS()
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   })
-  const [isSubmitted, setIsSubmitted] = useState(false)
   
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -21,23 +24,39 @@ const Contact = () => {
     }))
   }
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Here you would normally send the data to your backend
-    setIsSubmitted(true)
     
-    // Reset form
-    setTimeout(() => {
+    // Generate a simple user ID based on email for rate limiting
+    const userId = formData.email.toLowerCase()
+    
+    const result = await sendEmail(formData, userId)
+    
+    if (result.success) {
+      // Reset form on success
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       })
-      setIsSubmitted(false)
-    }, 3000)
+      
+      // Auto-reset success message after 5 seconds
+      setTimeout(() => {
+        resetStates()
+      }, 5000)
+    }
   }
+  
+  // Auto-reset error message after 5 seconds
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        resetStates()
+      }, 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [error, resetStates])
   
   return (
     <section id='contact' className='py-24 bg-secondary-light'>
@@ -128,6 +147,30 @@ const Contact = () => {
           >
             <h3 className='text-2xl font-semibold mb-6 text-primary'>{t('contact.sendMessage')}</h3>
             
+            {/* Success Message */}
+            {success && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className='mb-4 p-4 bg-primary text-secondary rounded-md border border-primary-dark flex items-center space-x-2'
+              >
+                <CheckCircle className='text-secondary' />
+                <span>{t('contact.messageSent')}</span>
+              </motion.div>
+            )}
+            
+            {/* Error Message */}
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className='mb-4 p-4 bg-red-600 text-white rounded-md border border-red-700 flex items-center space-x-2'
+              >
+                <Error className='text-white' />
+                <span>{error}</span>
+              </motion.div>
+            )}
+            
             <form onSubmit={handleSubmit} className='space-y-4'>
               <div>
                 <input 
@@ -137,7 +180,8 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder={t('contact.form.name')}
                   required
-                  className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition'
+                  disabled={isLoading}
+                  className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition disabled:opacity-50'
                 />
               </div>
               
@@ -149,7 +193,8 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder={t('contact.form.email')}
                   required
-                  className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition'
+                  disabled={isLoading}
+                  className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition disabled:opacity-50'
                 />
               </div>
               
@@ -161,7 +206,8 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder={t('contact.subject')}
                   required
-                  className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition'
+                  disabled={isLoading}
+                  className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition disabled:opacity-50'
                 />
               </div>
               
@@ -173,18 +219,26 @@ const Contact = () => {
                   placeholder={t('contact.form.message')}
                   required
                   rows={5}
-                  className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition resize-none'
+                  disabled={isLoading}
+                  className='w-full p-3 rounded-md bg-secondary border border-gray-700 text-white focus:outline-none focus:border-primary transition resize-none disabled:opacity-50'
                 />
               </div>
               
               <motion.button
                 type='submit'
-                className='px-8 py-3 bg-primary hover:bg-primary-dark text-secondary font-semibold rounded-md transition-colors w-full'
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                disabled={isSubmitted}
+                className='px-8 py-3 bg-primary hover:bg-primary-dark text-secondary font-semibold rounded-md transition-colors w-full disabled:opacity-50 disabled:cursor-not-allowed'
+                whileHover={{ scale: isLoading ? 1 : 1.02 }}
+                whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                disabled={isLoading}
               >
-                {isSubmitted ? t('contact.messageSent') : t('contact.form.send')}
+                {isLoading ? (
+                  <span className='flex items-center justify-center'>
+                    <div className='animate-spin rounded-full h-5 w-5 border-b-2 border-secondary mr-2'></div>
+                    {t('contact.sending')}
+                  </span>
+                ) : (
+                  t('contact.form.send')
+                )}
               </motion.button>
             </form>
           </motion.div>

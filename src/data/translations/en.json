@@ -78,7 +78,9 @@
         "sendMessage": "Send a Message",
         "phone": "Phone",
         "nationality": "Nationality",
-        "messageSent": "Message Sent!",
+        "messageSent": "Message Sent Successfully!",
+        "messageError": "Failed to send message. Please try again.",
+        "sending": "Sending...",
         "subject": "Subject",
         "form": {
             "name": "Name",
