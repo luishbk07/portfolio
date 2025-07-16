@@ -22,6 +22,77 @@ const SUPPORTED_LANGUAGES = ['en', 'es']
 const DEFAULT_LANGUAGE = 'en'
 const STORAGE_KEY = 'portfolio-language'
 
+// Spanish-speaking countries and regions
+const SPANISH_SPEAKING_COUNTRIES = [
+  'AR', // Argentina
+  'BO', // Bolivia
+  'CL', // Chile
+  'CO', // Colombia
+  'CR', // Costa Rica
+  'CU', // Cuba
+  'DO', // Dominican Republic
+  'EC', // Ecuador
+  'SV', // El Salvador
+  'GT', // Guatemala
+  'HN', // Honduras
+  'MX', // Mexico
+  'NI', // Nicaragua
+  'PA', // Panama
+  'PY', // Paraguay
+  'PE', // Peru
+  'PR', // Puerto Rico
+  'ES', // Spain
+  'UY', // Uruguay
+  'VE', // Venezuela
+  'GQ', // Equatorial Guinea
+  'PH', // Philippines (Spanish influence)
+]
+
+// Function to detect language based on location
+const detectLanguageFromLocation = async () => {
+  try {
+    console.log('🔍 Starting language detection...')
+    
+    // First try to get location from IP geolocation
+    console.log('📍 Fetching location from IP...')
+    const response = await fetch('https://ipapi.co/json/')
+    const data = await response.json()
+    
+    console.log('🌍 Location data:', data)
+    console.log('🏳️ Country code:', data.country_code)
+    console.log('📝 Spanish-speaking countries:', SPANISH_SPEAKING_COUNTRIES)
+    
+    if (data.country_code && SPANISH_SPEAKING_COUNTRIES.includes(data.country_code)) {
+      console.log('✅ Detected Spanish-speaking country:', data.country_code)
+      return 'es'
+    }
+    
+    // Fallback to browser language
+    const browserLang = navigator.language || navigator.userLanguage
+    console.log('🌐 Browser language:', browserLang)
+    
+    if (browserLang.startsWith('es')) {
+      console.log('✅ Detected Spanish browser language')
+      return 'es'
+    }
+    
+    console.log('🌍 Defaulting to English')
+    return 'en'
+  } catch {
+    console.log('❌ Could not detect location, using browser language')
+    // Fallback to browser language
+    const browserLang = navigator.language || navigator.userLanguage
+    console.log('🌐 Browser language (fallback):', browserLang)
+    
+    if (browserLang.startsWith('es')) {
+      console.log('✅ Detected Spanish browser language (fallback)')
+      return 'es'
+    }
+    console.log('🌍 Defaulting to English (fallback)')
+    return 'en'
+  }
+}
+
 const LanguageContext = createContext()
 
 export const LanguageProvider = ({ children }) => {
@@ -30,6 +101,23 @@ export const LanguageProvider = ({ children }) => {
     const savedLanguage = localStorage.getItem(STORAGE_KEY)
     return SUPPORTED_LANGUAGES.includes(savedLanguage) ? savedLanguage : DEFAULT_LANGUAGE
   })
+
+  const [isDetecting, setIsDetecting] = useState(false)
+
+  useEffect(() => {
+    // Auto-detect language on first visit
+    const savedLanguage = localStorage.getItem(STORAGE_KEY)
+    
+    if (!savedLanguage) {
+      setIsDetecting(true)
+      detectLanguageFromLocation().then(detectedLanguage => {
+        setCurrentLanguage(detectedLanguage)
+        setIsDetecting(false)
+      }).catch(() => {
+        setIsDetecting(false)
+      })
+    }
+  }, [])
 
   useEffect(() => {
     // Save language preference to localStorage
@@ -78,7 +166,8 @@ export const LanguageProvider = ({ children }) => {
     t,
     getPortfolioData,
     supportedLanguages: SUPPORTED_LANGUAGES,
-    isRTL: false // Add RTL support if needed later
+    isRTL: false, // Add RTL support if needed later
+    isDetecting
   }
 
   return (
