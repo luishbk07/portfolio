@@ -54,7 +54,7 @@ const detectLanguageFromLocation = async () => {
     // Try multiple geolocation APIs for better reliability
     let countryCode = null
     
-    // First try: ipapi.co
+    // First try: ipapi.co (HTTPS)
     try {
       const response1 = await fetch('https://ipapi.co/json/', {
         method: 'GET',
@@ -72,10 +72,10 @@ const detectLanguageFromLocation = async () => {
       console.log('ipapi.co failed, trying alternative...')
     }
     
-    // Second try: ip-api.com (more reliable)
+    // Second try: ipinfo.io (HTTPS)
     if (!countryCode) {
       try {
-        const response2 = await fetch('http://ip-api.com/json/?fields=countryCode', {
+        const response2 = await fetch('https://ipinfo.io/json', {
           method: 'GET',
           headers: {
             'Accept': 'application/json',
@@ -83,19 +83,19 @@ const detectLanguageFromLocation = async () => {
         })
         if (response2.ok) {
           const data2 = await response2.json()
-          if (data2.countryCode) {
-            countryCode = data2.countryCode
+          if (data2.country) {
+            countryCode = data2.country
           }
         }
       } catch {
-        console.log('ip-api.com failed, trying third option...')
+        console.log('ipinfo.io failed, trying third option...')
       }
     }
     
-    // Third try: ipinfo.io
+    // Third try: ipapi.com (HTTPS)
     if (!countryCode) {
       try {
-        const response3 = await fetch('https://ipinfo.io/json', {
+        const response3 = await fetch('https://ipapi.com/json/', {
           method: 'GET',
           headers: {
             'Accept': 'application/json',
@@ -103,12 +103,12 @@ const detectLanguageFromLocation = async () => {
         })
         if (response3.ok) {
           const data3 = await response3.json()
-          if (data3.country) {
-            countryCode = data3.country
+          if (data3.country_code) {
+            countryCode = data3.country_code
           }
         }
       } catch {
-        console.log('ipinfo.io failed, using browser language...')
+        console.log('ipapi.com failed, using browser language...')
       }
     }
     
