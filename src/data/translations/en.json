@@ -81,8 +81,8 @@
         "messageSent": "Message Sent!",
         "subject": "Subject",
         "form": {
-            "name": "Your Name",
-            "email": "Your Email",
+            "name": "Name",
+            "email": "Email",
             "message": "Your Message",
             "send": "Send Message"
         }

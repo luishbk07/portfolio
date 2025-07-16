@@ -81,8 +81,8 @@
         "messageSent": "¡Mensaje Enviado!",
         "subject": "Asunto",
         "form": {
-            "name": "Tu Nombre",
-            "email": "Tu Correo",
+            "name": "Nombre",
+            "email": "Correo",
             "message": "Tu Mensaje",
             "send": "Enviar Mensaje"
         }
