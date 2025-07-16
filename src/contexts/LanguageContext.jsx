@@ -51,44 +51,27 @@ const SPANISH_SPEAKING_COUNTRIES = [
 // Function to detect language based on location
 const detectLanguageFromLocation = async () => {
   try {
-    console.log('🔍 Starting language detection...')
-    
     // First try to get location from IP geolocation
-    console.log('📍 Fetching location from IP...')
     const response = await fetch('https://ipapi.co/json/')
     const data = await response.json()
     
-    console.log('🌍 Location data:', data)
-    console.log('🏳️ Country code:', data.country_code)
-    console.log('📝 Spanish-speaking countries:', SPANISH_SPEAKING_COUNTRIES)
-    
     if (data.country_code && SPANISH_SPEAKING_COUNTRIES.includes(data.country_code)) {
-      console.log('✅ Detected Spanish-speaking country:', data.country_code)
       return 'es'
     }
     
     // Fallback to browser language
     const browserLang = navigator.language || navigator.userLanguage
-    console.log('🌐 Browser language:', browserLang)
-    
     if (browserLang.startsWith('es')) {
-      console.log('✅ Detected Spanish browser language')
       return 'es'
     }
     
-    console.log('🌍 Defaulting to English')
     return 'en'
   } catch {
-    console.log('❌ Could not detect location, using browser language')
     // Fallback to browser language
     const browserLang = navigator.language || navigator.userLanguage
-    console.log('🌐 Browser language (fallback):', browserLang)
-    
     if (browserLang.startsWith('es')) {
-      console.log('✅ Detected Spanish browser language (fallback)')
       return 'es'
     }
-    console.log('🌍 Defaulting to English (fallback)')
     return 'en'
   }
 }
