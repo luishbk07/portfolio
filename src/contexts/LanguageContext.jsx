@@ -51,11 +51,69 @@ const SPANISH_SPEAKING_COUNTRIES = [
 // Function to detect language based on location
 const detectLanguageFromLocation = async () => {
   try {
-    // First try to get location from IP geolocation
-    const response = await fetch('https://ipapi.co/json/')
-    const data = await response.json()
+    // Try multiple geolocation APIs for better reliability
+    let countryCode = null
     
-    if (data.country_code && SPANISH_SPEAKING_COUNTRIES.includes(data.country_code)) {
+    // First try: ipapi.co
+    try {
+      const response1 = await fetch('https://ipapi.co/json/', {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+        }
+      })
+      if (response1.ok) {
+        const data1 = await response1.json()
+        if (data1.country_code) {
+          countryCode = data1.country_code
+        }
+      }
+    } catch {
+      console.log('ipapi.co failed, trying alternative...')
+    }
+    
+    // Second try: ip-api.com (more reliable)
+    if (!countryCode) {
+      try {
+        const response2 = await fetch('http://ip-api.com/json/?fields=countryCode', {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+          }
+        })
+        if (response2.ok) {
+          const data2 = await response2.json()
+          if (data2.countryCode) {
+            countryCode = data2.countryCode
+          }
+        }
+      } catch {
+        console.log('ip-api.com failed, trying third option...')
+      }
+    }
+    
+    // Third try: ipinfo.io
+    if (!countryCode) {
+      try {
+        const response3 = await fetch('https://ipinfo.io/json', {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+          }
+        })
+        if (response3.ok) {
+          const data3 = await response3.json()
+          if (data3.country) {
+            countryCode = data3.country
+          }
+        }
+      } catch {
+        console.log('ipinfo.io failed, using browser language...')
+      }
+    }
+    
+    // Check if detected country is Spanish-speaking
+    if (countryCode && SPANISH_SPEAKING_COUNTRIES.includes(countryCode)) {
       return 'es'
     }
     
@@ -67,7 +125,7 @@ const detectLanguageFromLocation = async () => {
     
     return 'en'
   } catch {
-    // Fallback to browser language
+    // Final fallback to browser language
     const browserLang = navigator.language || navigator.userLanguage
     if (browserLang.startsWith('es')) {
       return 'es'
