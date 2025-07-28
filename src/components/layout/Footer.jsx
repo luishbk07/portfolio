@@ -25,7 +25,7 @@ const Footer = () => {
               <FaEnvelope size={24} />
             </a>
             <a 
-              href='https://www.linkedin.com/in/luis-henriquez-4307546/' 
+              href='https://www.linkedin.com/in/luis-henriquez-43075461/' 
               target='_blank' 
               rel='noopener noreferrer'
               className='text-white hover:text-primary transition-colors'
