@@ -123,67 +123,76 @@
     "projects": [
         {
             "id": 1,
-            "title": "Sitio Pouch Agent",
-            "description": "Plataforma para agentes de seguros con funciones de gestión de pólizas y seguimiento de clientes.",
+            "title": "Pouch Agent Platform",
+            "description": "Insurance agent platform with policy management and client tracking features.",
             "technologies": [
                 "React",
                 "NodeJS",
                 "JavaScript"
             ],
-            "image": "https://placehold.co/600x400/121212/FFCC00?text=Pouch+Agent",
             "demo": "https://agent.pouchinsurance.com/",
             "github": null
         },
         {
             "id": 2,
-            "title": "Sitio Web Fastlane",
-            "description": "Sitio web de compañía de seguros con información sobre servicios y formularios de cotización.",
+            "title": "Pouch Landing Page",
+            "description": "Landing page para Pouch Insurance. Desarrollado usando prompt engineering y técnicas de desarrollo impulsadas por IA.",
             "technologies": [
-                "JavaScript",
                 "React",
-                "NodeJS"
+                "NextJS",
+                "JavaScript",
+                "Prompt Engineering",
+                "Integración de IA"
             ],
-            "image": "https://placehold.co/600x400/121212/FFCC00?text=Fastlane",
-            "demo": "https://Fastlane.insure/",
+            "demo": "https://pouchinsurance.com/",
             "github": null
         },
         {
             "id": 3,
-            "title": "Solaris Insure",
-            "description": "Marketplace de seguros para la región del sur de California.",
+            "title": "Fastlane Website",
+            "description": "Insurance company website with information about services and quote forms.",
             "technologies": [
                 "JavaScript",
                 "React",
                 "NodeJS"
             ],
-            "image": "https://placehold.co/600x400/121212/FFCC00?text=Solaris+Insure",
-            "demo": "https://Solaris.insure/",
+            "demo": "https://Fastlane.insure/",
             "github": null
         },
         {
             "id": 4,
-            "title": "Gig Cover",
-            "description": "Plataforma de seguros para trabajadores independientes desarrollada usando Prompt Engineering y técnicas de desarrollo impulsadas por IA.",
+            "title": "Solaris Insure",
+            "description": "Insurance marketplace for the Southern California region.",
             "technologies": [
-                "Prompt Engineering",
                 "JavaScript",
                 "React",
-                "Integración de IA"
+                "NodeJS"
             ],
-            "image": "https://placehold.co/600x400/121212/FFCC00?text=Gig+Cover",
-            "demo": "https://gigcover.insure/",
+            "demo": "https://Solaris.insure/",
             "github": null
         },
         {
             "id": 5,
-            "title": "Productos ATL Software",
-            "description": "Varias aplicaciones desarrolladas con Angular para ATL-Software.",
+            "title": "Gig Cover",
+            "description": "Insurance platform for gig workers developed using prompt engineering and AI-driven development techniques.",
+            "technologies": [
+                "Prompt Engineering",
+                "JavaScript",
+                "React",
+                "AI Integration"
+            ],
+            "demo": "https://gigcover.insure/",
+            "github": null
+        },
+        {
+            "id": 6,
+            "title": "ATL Software Products",
+            "description": "Various applications developed with Angular for ATL-Software.",
             "technologies": [
                 "Angular 11+",
                 "Bootstrap",
                 "PHP"
             ],
-            "image": "https://placehold.co/600x400/121212/FFCC00?text=ATL+Software",
             "demo": null,
             "github": null
         }

@@ -12,13 +12,18 @@ const ProjectCard = ({ project }) => {
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      <div className='relative h-48 md:h-64 bg-secondary-dark overflow-hidden'>
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-110'
-        />
-        <div className='absolute inset-0 bg-primary/80 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+      <div className='relative h-48 md:h-64 bg-primary flex items-center justify-center overflow-hidden'>
+        <div className='text-center'>
+          <h4 className='text-5xl font-bold text-secondary mb-2'>{project.title}</h4>
+          {/* <div className='flex flex-wrap justify-center gap-2'>
+            {project.technologies.slice(0, 3).map((tech, index) => (
+              <span key={index} className='text-xs bg-secondary text-primary px-2 py-1 rounded-full'>
+                {tech}
+              </span>
+            ))}
+          </div> */}
+        </div>
+        <div className='absolute inset-0 bg-secondary/80 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
           {project.github && (
             <a 
               href={project.github} 
@@ -42,7 +47,7 @@ const ProjectCard = ({ project }) => {
         </div>
       </div>
       <div className='p-6'>
-        <h3 className='text-xl font-semibold mb-2 text-primary'>{project.title}</h3>
+        <h3 className='text-lg font-semibold mb-2 text-primary truncate'>{project.title}</h3>
         <p className='text-white mb-4'>{project.description}</p>
         <div className='flex flex-wrap gap-2'>
           {project.technologies.map((tech, index) => (
