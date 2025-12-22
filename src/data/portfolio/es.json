@@ -73,7 +73,7 @@
                 "Liderar proyectos \"Pouch\" y otros",
                 "Prompt Engineering e integración de IA",
                 "Asistencia a mesa de ayuda (Jira)",
-                "Desarrolló: Sitio Pouch Agent, sitio web Fastlane, Solaris Insure"
+                "Desarrolló: Sitio Pouch Agent, sitio web Fastlane"
             ]
         },
         {
@@ -157,18 +157,6 @@
                 "NodeJS"
             ],
             "demo": "https://Fastlane.insure/",
-            "github": null
-        },
-        {
-            "id": 4,
-            "title": "Solaris Insure",
-            "description": "Insurance marketplace for the Southern California region.",
-            "technologies": [
-                "JavaScript",
-                "React",
-                "NodeJS"
-            ],
-            "demo": "https://Solaris.insure/",
             "github": null
         },
         {
