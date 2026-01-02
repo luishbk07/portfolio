@@ -14,18 +14,18 @@
     "hero": {
         "greeting": "Hello, I'm",
         "title": "Luis Henriquez",
-        "subtitle": "Development and Technology Lead",
-        "description": "Passionate Full-Stack Developer with 5+ years of experience in JavaScript, React, Angular, and modern web technologies.",
+        "subtitle": "Frontend Specialist",
+        "description": "Frontend Developer specializing in Insurtech platforms and Instanda-based solutions. Building custom frontend layers, agent portals, and quote-to-bind flows for insurance companies.",
         "viewWork": "View My Work",
-        "contactMe": "Contact Me"
+        "contactMe": "Let's Work Together"
     },
     "about": {
         "title": "About",
         "subtitle": "Me",
         "profile": {
             "title": "Profile",
-            "description1": "Dominican willing to work remotely or relocated to some countries. IT Professional with more than 7 years of experience in several areas such as Development, Data Base and QA.",
-            "description2": "Nice knowledge of JavaScript, TypeScript, React, Angular, NodeJS, HTML, CSS, etc. Able to convey ideas and communicate in English."
+            "description1": "Frontend Developer with 8+ years of experience, specializing in Insurtech platforms since 2020. Expert in building custom frontend layers on top of Instanda, creating agent portals, quote-to-bind flows, and optimizing user experiences for insurance companies.",
+            "description2": "Skilled in JavaScript, TypeScript, React, Node.js, and modern frontend architectures. Proven track record of delivering scalable, conversion-focused solutions for insurance marketplaces and agent platforms."
         },
         "info": {
             "education": {
@@ -46,8 +46,8 @@
             },
             "experience": {
                 "title": "Experience",
-                "years": "+7 years",
-                "level": "Development Lead"
+                "years": "8+ years",
+                "level": "Frontend Specialist"
             }
         }
     },
@@ -55,25 +55,25 @@
         "title": "My",
         "subtitle": "Skills",
         "categories": {
-            "technical": "Technical Skills",
-            "professional": "Professional Skills",
-            "soft": "Soft Skills"
+            "technical": "Frontend Technologies",
+            "professional": "Insurtech Expertise",
+            "soft": "Professional Skills"
         }
     },
     "experience": {
         "title": "Professional",
         "subtitle": "Experience",
-        "description": "My professional journey showcases my development expertise and growth in the IT industry."
+        "description": "Leading frontend development for insurance platforms, specializing in Instanda-based solutions and custom UI implementations."
     },
     "projects": {
         "title": "My",
         "subtitle": "Projects",
-        "description": "Here are some of the notable projects I've worked on. Each project showcases my skills in development and problem solving."
+        "description": "Insurance platforms and agent portals built on Instanda and modern frontend technologies. Focused on conversion optimization, user experience, and scalable architecture."
     },
     "contact": {
         "title": "Get In",
         "subtitle": "Touch",
-        "description": "Interested in working together? Feel free to reach out. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+        "description": "Building or optimizing an insurance platform? Let's discuss how I can help enhance your Instanda implementation, improve conversion rates, or build custom frontend solutions.",
         "getInTouch": "Get In Touch",
         "sendMessage": "Send a Message",
         "phone": "Phone",

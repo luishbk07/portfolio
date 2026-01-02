@@ -62,7 +62,8 @@ const Navbar = () => {
     { title: t('navbar.skills'), href: '#skills' },
     { title: t('navbar.experience'), href: '#experience' },
     { title: t('navbar.projects'), href: '#projects' },
-    { title: t('navbar.contact'), href: '#contact' }
+    { title: t('navbar.contact'), href: '#contact' },
+    { title: 'Instanda Specialist', href: '/instanda-frontend-specialist', external: true }
   ]
 
   useEffect(() => {
@@ -83,7 +84,7 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll)
     document.addEventListener('click', handleClickOutside)
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll)
       document.removeEventListener('click', handleClickOutside)
@@ -109,7 +110,7 @@ const Navbar = () => {
             <motion.a
               key={index}
               href={link.href}
-              className='text-white hover:text-primary transition-colors'
+              className={link.external ? 'text-primary hover:text-primary-dark font-semibold transition-colors' : 'text-white hover:text-primary transition-colors'}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -151,7 +152,7 @@ const Navbar = () => {
                 key={index}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className='text-white hover:text-primary block py-2 transition-colors'
+                className={link.external ? 'text-primary hover:text-primary-dark font-semibold block py-2 transition-colors' : 'text-white hover:text-primary block py-2 transition-colors'}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
@@ -166,4 +167,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar 
+export default Navbar

@@ -14,18 +14,18 @@
     "hero": {
         "greeting": "Hola, soy",
         "title": "Luis Henriquez",
-        "subtitle": "Líder de Desarrollo y Tecnología",
-        "description": "Desarrollador Full-Stack apasionado con más de 7 años de experiencia en JavaScript, React, Angular y tecnologías web modernas.",
+        "subtitle": "Especialista en Frontend",
+        "description": "Desarrollador Frontend especializado en plataformas Insurtech y soluciones basadas en Instanda. Construyendo capas frontend personalizadas, portales de agentes y flujos de cotización para compañías de seguros.",
         "viewWork": "Ver Mi Trabajo",
-        "contactMe": "Contáctame"
+        "contactMe": "Trabajemos Juntos"
     },
     "about": {
         "title": "Acerca",
         "subtitle": "de Mí",
         "profile": {
             "title": "Perfil",
-            "description1": "Dominicano dispuesto a trabajar de forma remota o relocalizarse a algunos países. Profesional de TI con más de 7 años de experiencia en varias áreas como Desarrollo, Base de Datos y QA.",
-            "description2": "Buen conocimiento de JavaScript, TypeScript, React, Angular, NodeJS, HTML, CSS, etc. Capaz de transmitir ideas y comunicarse en inglés."
+            "description1": "Desarrollador Frontend con más de 8 años de experiencia, especializado en plataformas Insurtech desde 2020. Experto en construir capas frontend personalizadas sobre Instanda, creando portales de agentes, flujos de cotización y optimizando experiencias de usuario para compañías de seguros.",
+            "description2": "Experto en JavaScript, TypeScript, React, Node.js y arquitecturas frontend modernas. Historial comprobado de entregar soluciones escalables y enfocadas en conversión para marketplaces de seguros y plataformas de agentes."
         },
         "info": {
             "education": {
@@ -46,8 +46,8 @@
             },
             "experience": {
                 "title": "Experiencia",
-                "years": "+7 años",
-                "level": "Líder de Desarrollo"
+                "years": "8+ años",
+                "level": "Especialista Frontend"
             }
         }
     },
@@ -55,25 +55,25 @@
         "title": "Mis",
         "subtitle": "Habilidades",
         "categories": {
-            "technical": "Habilidades Técnicas",
-            "professional": "Habilidades Profesionales",
-            "soft": "Habilidades Blandas"
+            "technical": "Tecnologías Frontend",
+            "professional": "Experiencia Insurtech",
+            "soft": "Habilidades Profesionales"
         }
     },
     "experience": {
         "title": "Experiencia",
         "subtitle": "Profesional",
-        "description": "Mi trayectoria profesional demuestra mi experiencia en desarrollo y crecimiento en la industria de TI."
+        "description": "Liderando desarrollo frontend para plataformas de seguros, especializado en soluciones basadas en Instanda e implementaciones de UI personalizadas."
     },
     "projects": {
         "title": "Mis",
         "subtitle": "Proyectos",
-        "description": "Aquí están algunos de los proyectos más destacados en los que he trabajado. Cada proyecto demuestra mis habilidades en desarrollo y resolución de problemas."
+        "description": "Plataformas de seguros y portales de agentes construidos sobre Instanda y tecnologías frontend modernas. Enfocado en optimización de conversión, experiencia de usuario y arquitectura escalable."
     },
     "contact": {
         "title": "Ponte En",
         "subtitle": "Contacto",
-        "description": "¿Interesado en trabajar juntos? No dudes en contactarme. Siempre estoy abierto a discutir nuevos proyectos, ideas creativas u oportunidades para ser parte de tu visión.",
+        "description": "¿Construyendo u optimizando una plataforma de seguros? Hablemos sobre cómo puedo ayudar a mejorar tu implementación de Instanda, aumentar tasas de conversión o construir soluciones frontend personalizadas.",
         "getInTouch": "Ponte en Contacto",
         "sendMessage": "Enviar un Mensaje",
         "phone": "Teléfono",

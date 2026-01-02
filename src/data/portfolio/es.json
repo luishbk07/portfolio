@@ -18,26 +18,26 @@
                 "percentage": 90
             },
             {
-                "name": "Prompt Engineering",
+                "name": "Diseño UI/UX",
                 "percentage": 85
             }
         ],
         "professional": [
             {
-                "name": "Desarrollo Web",
+                "name": "Plataforma Instanda",
                 "percentage": 90
             },
             {
-                "name": "CI/CD",
+                "name": "Arquitectura Frontend",
                 "percentage": 85
             },
             {
-                "name": "SCRUM",
-                "percentage": 80
+                "name": "Integración API",
+                "percentage": 85
             },
             {
-                "name": "Diseño de Base de Datos",
-                "percentage": 75
+                "name": "Optimización de Conversión",
+                "percentage": 80
             }
         ],
         "soft": [
@@ -67,13 +67,13 @@
             "period": "Actual",
             "location": "Dallas, Texas, EUA (Remoto)",
             "responsibilities": [
-                "Desarrollo de productos (JS, React, NodeJS)",
-                "Mantenimiento de aplicaciones (JS, React, NodeJS)",
-                "Implementar programación funcional",
-                "Liderar proyectos \"Pouch\" y otros",
-                "Prompt Engineering e integración de IA",
-                "Asistencia a mesa de ayuda (Jira)",
-                "Desarrolló: Sitio Pouch Agent, sitio web Fastlane"
+                "Liderar desarrollo frontend para plataformas de seguros basadas en Instanda",
+                "Construir capas frontend personalizadas y portales de agentes sobre el core de Instanda",
+                "Diseñar e implementar flujos de cotización con tasas de conversión optimizadas",
+                "Crear soluciones UI/UX responsivas y escalables para marketplaces de seguros",
+                "Integrar aplicaciones frontend con APIs y servicios de Instanda",
+                "Optimizar experiencia de usuario y embudos de conversión para plataformas de agentes",
+                "Entregados: Pouch Agent Platform (Instanda), marketplace Fastlane"
             ]
         },
         {
@@ -124,11 +124,12 @@
         {
             "id": 1,
             "title": "Pouch Agent Platform",
-            "description": "Insurance agent platform with policy management and client tracking features.",
+            "description": "Portal de agentes personalizado construido sobre la plataforma Instanda. Incluye gestión de pólizas, seguimiento de clientes y flujos de trabajo optimizados de cotización. Optimizado para conversión y experiencia de usuario.",
             "technologies": [
                 "React",
                 "NodeJS",
-                "JavaScript"
+                "JavaScript",
+                "Instanda"
             ],
             "demo": "https://agent.pouchinsurance.com/",
             "github": null
@@ -136,13 +137,12 @@
         {
             "id": 2,
             "title": "Pouch Landing Page",
-            "description": "Landing page para Pouch Insurance. Desarrollado usando prompt engineering y técnicas de desarrollo impulsadas por IA.",
+            "description": "Sitio web de marketing para Pouch Insurance con diseño optimizado para conversión. Se integra con la plataforma Instanda para solicitudes de cotización y generación de leads.",
             "technologies": [
                 "React",
                 "NextJS",
                 "JavaScript",
-                "Prompt Engineering",
-                "Integración de IA"
+                "Integración Instanda"
             ],
             "demo": "https://pouchinsurance.com/",
             "github": null
@@ -150,7 +150,7 @@
         {
             "id": 3,
             "title": "Fastlane Website",
-            "description": "Insurance company website with information about services and quote forms.",
+            "description": "Sitio web de marketplace de seguros con información de servicios y formularios de cotización. Construido con arquitectura frontend moderna para tiempos de carga rápidos y experiencia de usuario optimizada.",
             "technologies": [
                 "JavaScript",
                 "React",
@@ -162,12 +162,11 @@
         {
             "id": 5,
             "title": "Gig Cover",
-            "description": "Insurance platform for gig workers developed using prompt engineering and AI-driven development techniques.",
+            "description": "Plataforma de seguros especializada para trabajadores de la economía gig. Incluye incorporación simplificada, gestión de pólizas y procesos de cotización fáciles de usar.",
             "technologies": [
-                "Prompt Engineering",
                 "JavaScript",
                 "React",
-                "AI Integration"
+                "NodeJS"
             ],
             "demo": "https://gigcover.insure/",
             "github": null
