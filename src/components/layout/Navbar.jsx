@@ -56,15 +56,33 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { t } = useTranslation()
+  const [currentPath, setCurrentPath] = useState(window.location.pathname)
 
-  const navLinks = [
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname)
+    }
+    window.addEventListener('popstate', handleLocationChange)
+    // Also check on mount
+    setCurrentPath(window.location.pathname)
+    return () => window.removeEventListener('popstate', handleLocationChange)
+  }, [])
+
+  const isInstandaPage = currentPath === '/instanda-frontend-specialist'
+
+  const allNavLinks = [
     { title: t('navbar.about'), href: '#about' },
     { title: t('navbar.skills'), href: '#skills' },
     { title: t('navbar.experience'), href: '#experience' },
     { title: t('navbar.projects'), href: '#projects' },
     { title: t('navbar.contact'), href: '#contact' },
-    { title: 'Instanda Specialist', href: '/instanda-frontend-specialist', external: true }
+    { title: t('navbar.instandaSpecialist'), href: '/instanda-frontend-specialist', external: true }
   ]
+
+  // Filter links based on current page
+  const navLinks = isInstandaPage
+    ? allNavLinks.filter(link => link.href === '#experience' || link.href === '#contact')
+    : allNavLinks
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,7 +117,7 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <a href='#home' className='text-2xl font-bold text-primary'>
+          <a href='/' className='text-2xl font-bold text-primary'>
             Luis<span className='text-white'>Dev</span>
           </a>
         </motion.div>

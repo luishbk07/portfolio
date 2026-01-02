@@ -70,7 +70,7 @@ const Hero = () => {
               href='/instanda-frontend-specialist'
               className='px-8 py-3 bg-secondary-light border-2 border-primary text-primary hover:bg-primary hover:text-secondary font-semibold rounded-md transition-colors'
             >
-              Instanda Specialist
+              {t('hero.instandaSpecialist')}
             </a>
           </motion.div>
         </div>

@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "../contexts/LanguageContext";
+import Layout from "../components/layout/Layout";
 
 const InstandaFrontendSpecialist = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="min-h-screen bg-secondary text-white">
+    <Layout>
+      <div className="min-h-screen bg-secondary text-white">
+
       {/* Hero Section */}
-      <section className="min-h-screen relative flex items-center justify-center overflow-hidden bg-secondary-dark pt-20">
+      <section className="min-h-screen relative flex items-center justify-center overflow-hidden bg-secondary-dark pt-24">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-20 right-10 w-60 h-60 rounded-full bg-primary/10 blur-3xl"></div>
           <div className="absolute bottom-20 left-10 w-60 h-60 rounded-full bg-primary/5 blur-3xl"></div>
@@ -19,9 +25,16 @@ const InstandaFrontendSpecialist = () => {
               className="mb-6"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                <span className="text-white">Frontend Specialist for </span>
-                <span className="text-primary">Instanda-based</span>
-                <span className="text-white"> Insurance Platforms</span>
+                <span className="text-white">{t("instanda.heroTitle")} </span>
+                <span className="text-primary">
+                  {t("instanda.heroTitleHighlight")}
+                </span>
+                {t("instanda.heroTitleEnd") && (
+                  <span className="text-white">
+                    {" "}
+                    {t("instanda.heroTitleEnd")}
+                  </span>
+                )}
               </h1>
             </motion.div>
 
@@ -32,9 +45,7 @@ const InstandaFrontendSpecialist = () => {
               className="mb-8"
             >
               <p className="text-xl md:text-2xl text-white max-w-3xl">
-                Building custom agent portals, optimizing quote-to-bind flows,
-                and enhancing user experience—without touching your Instanda
-                core.
+                {t("instanda.heroSubtitle")}
               </p>
             </motion.div>
 
@@ -47,7 +58,7 @@ const InstandaFrontendSpecialist = () => {
                 href="#contact"
                 className="inline-block px-8 py-4 bg-primary hover:bg-primary-dark text-secondary font-semibold rounded-md transition-colors text-lg"
               >
-                Improve Your Instanda Frontend
+                {t("instanda.heroCta")}
               </a>
             </motion.div>
           </div>
@@ -65,8 +76,10 @@ const InstandaFrontendSpecialist = () => {
             className="mb-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
-              <span className="text-primary">Where Instanda</span> Frontends
-              Fall Short
+              <span className="text-primary">
+                {t("instanda.problemTitle")}
+              </span>{" "}
+              {t("instanda.problemTitleEnd")}
             </h2>
             <div className="w-16 h-1 bg-primary mx-auto mb-8"></div>
           </motion.div>
@@ -80,13 +93,9 @@ const InstandaFrontendSpecialist = () => {
               className="bg-secondary-light p-6 rounded-lg"
             >
               <h3 className="text-xl font-semibold text-primary mb-4">
-                Limited UI Flexibility
+                {t("instanda.problem1Title")}
               </h3>
-              <p className="text-white">
-                The default Instanda UI templates offer limited customization
-                options. Brand consistency and modern design expectations are
-                hard to achieve within the platform's constraints.
-              </p>
+              <p className="text-white">{t("instanda.problem1Text")}</p>
             </motion.div>
 
             <motion.div
@@ -97,13 +106,9 @@ const InstandaFrontendSpecialist = () => {
               className="bg-secondary-light p-6 rounded-lg"
             >
               <h3 className="text-xl font-semibold text-primary mb-4">
-                Poor UX in Quote-to-Bind Flows
+                {t("instanda.problem2Title")}
               </h3>
-              <p className="text-white">
-                Complex insurance journeys often feel clunky. Multi-step forms,
-                validation errors, and navigation issues reduce conversion rates
-                and frustrate potential customers.
-              </p>
+              <p className="text-white">{t("instanda.problem2Text")}</p>
             </motion.div>
 
             <motion.div
@@ -114,13 +119,9 @@ const InstandaFrontendSpecialist = () => {
               className="bg-secondary-light p-6 rounded-lg"
             >
               <h3 className="text-xl font-semibold text-primary mb-4">
-                Outdated Agent Portals
+                {t("instanda.problem3Title")}
               </h3>
-              <p className="text-white">
-                Agent and broker portals built with default Instanda components
-                can feel outdated. Modern workflows, better data visualization,
-                and improved usability are difficult to implement.
-              </p>
+              <p className="text-white">{t("instanda.problem3Text")}</p>
             </motion.div>
 
             <motion.div
@@ -131,13 +132,9 @@ const InstandaFrontendSpecialist = () => {
               className="bg-secondary-light p-6 rounded-lg"
             >
               <h3 className="text-xl font-semibold text-primary mb-4">
-                Difficult Customization
+                {t("instanda.problem4Title")}
               </h3>
-              <p className="text-white">
-                Making significant UI changes often requires modifying the core
-                platform, risking stability and future updates. There's a better
-                way to achieve the frontend you need.
-              </p>
+              <p className="text-white">{t("instanda.problem4Text")}</p>
             </motion.div>
           </div>
         </div>
@@ -154,8 +151,10 @@ const InstandaFrontendSpecialist = () => {
             className="mb-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
-              Custom Frontend Layers{" "}
-              <span className="text-primary">on Top of Instanda</span>
+              {t("instanda.solutionTitle")}{" "}
+              <span className="text-primary">
+                {t("instanda.solutionTitleEnd")}
+              </span>
             </h2>
             <div className="w-16 h-1 bg-primary mx-auto mb-8"></div>
           </motion.div>
@@ -169,10 +168,7 @@ const InstandaFrontendSpecialist = () => {
               className="mb-8"
             >
               <p className="text-lg text-white mb-6 leading-relaxed">
-                Instead of modifying Instanda's core, I build custom frontend
-                applications that connect to your platform via APIs. This
-                headless approach gives you complete control over the user
-                experience while keeping your core platform untouched.
+                {t("instanda.solutionText")}
               </p>
             </motion.div>
 
@@ -186,11 +182,10 @@ const InstandaFrontendSpecialist = () => {
               >
                 <div className="text-4xl font-bold text-primary mb-2">✓</div>
                 <h3 className="text-lg font-semibold text-white mb-2">
-                  No Core Changes
+                  {t("instanda.solution1Title")}
                 </h3>
                 <p className="text-white text-sm">
-                  Your Instanda core remains unchanged. No risk to stability or
-                  future updates.
+                  {t("instanda.solution1Text")}
                 </p>
               </motion.div>
 
@@ -203,11 +198,10 @@ const InstandaFrontendSpecialist = () => {
               >
                 <div className="text-4xl font-bold text-primary mb-2">⚡</div>
                 <h3 className="text-lg font-semibold text-white mb-2">
-                  Faster Iteration
+                  {t("instanda.solution2Title")}
                 </h3>
                 <p className="text-white text-sm">
-                  Frontend changes deploy independently. No core platform
-                  dependencies or release cycles.
+                  {t("instanda.solution2Text")}
                 </p>
               </motion.div>
 
@@ -220,11 +214,10 @@ const InstandaFrontendSpecialist = () => {
               >
                 <div className="text-4xl font-bold text-primary mb-2">🎨</div>
                 <h3 className="text-lg font-semibold text-white mb-2">
-                  Better UX
+                  {t("instanda.solution3Title")}
                 </h3>
                 <p className="text-white text-sm">
-                  Complete design freedom. Modern interfaces optimized for
-                  conversion and user satisfaction.
+                  {t("instanda.solution3Text")}
                 </p>
               </motion.div>
             </div>
@@ -243,7 +236,10 @@ const InstandaFrontendSpecialist = () => {
             className="mb-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
-              <span className="text-primary">Proven Instanda</span> Experience
+              <span className="text-primary">
+                {t("instanda.experienceTitle")}
+              </span>{" "}
+              {t("instanda.experienceTitleEnd")}
             </h2>
             <div className="w-16 h-1 bg-primary mx-auto mb-8"></div>
           </motion.div>
@@ -257,13 +253,10 @@ const InstandaFrontendSpecialist = () => {
               className="bg-secondary-light p-8 rounded-lg mb-6"
             >
               <h3 className="text-2xl font-semibold text-primary mb-4">
-                Working with Instanda Since 2020
+                {t("instanda.experience1Title")}
               </h3>
               <p className="text-white mb-4 leading-relaxed">
-                I've been building frontend solutions on top of Instanda for
-                over 4 years. This deep platform knowledge means I understand
-                the APIs, workflows, and common challenges insurance companies
-                face.
+                {t("instanda.experience1Text")}
               </p>
             </motion.div>
 
@@ -275,10 +268,9 @@ const InstandaFrontendSpecialist = () => {
               className="bg-secondary-light p-8 rounded-lg"
             >
               <h3 className="text-2xl font-semibold text-primary mb-4">
-                Real-World Results
+                {t("instanda.experience2Title")}
               </h3>
               <p className="text-white mb-4 leading-relaxed">
-                The{" "}
                 <a
                   href="https://agent.pouchinsurance.com/"
                   target="_blank"
@@ -287,14 +279,10 @@ const InstandaFrontendSpecialist = () => {
                 >
                   Pouch Agent Platform
                 </a>{" "}
-                is a production example of this approach. Built as a custom
-                frontend layer on Instanda, it provides agents with a modern,
-                efficient interface for policy management and client tracking.
+                {t("instanda.experience2Text")}
               </p>
               <p className="text-white leading-relaxed">
-                I've also worked on multiple insurance products, agent portals,
-                and quote-to-bind journeys—all leveraging Instanda's robust
-                backend while delivering superior frontend experiences.
+                {t("instanda.experience2Text2")}
               </p>
             </motion.div>
           </div>
@@ -312,7 +300,7 @@ const InstandaFrontendSpecialist = () => {
             className="mb-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
-              <span className="text-primary">Common Use Cases</span>
+              <span className="text-primary">{t("instanda.useCasesTitle")}</span>
             </h2>
             <div className="w-16 h-1 bg-primary mx-auto mb-8"></div>
           </motion.div>
@@ -326,13 +314,9 @@ const InstandaFrontendSpecialist = () => {
               className="bg-secondary p-6 rounded-lg"
             >
               <h3 className="text-xl font-semibold text-primary mb-3">
-                Agent & Broker Portals
+                {t("instanda.useCase1Title")}
               </h3>
-              <p className="text-white">
-                Custom interfaces for agents to manage policies, track clients,
-                generate quotes, and process bind requests. Modern workflows
-                that improve productivity.
-              </p>
+              <p className="text-white">{t("instanda.useCase1Text")}</p>
             </motion.div>
 
             <motion.div
@@ -343,13 +327,9 @@ const InstandaFrontendSpecialist = () => {
               className="bg-secondary p-6 rounded-lg"
             >
               <h3 className="text-xl font-semibold text-primary mb-3">
-                Customer Quote-to-Bind Journeys
+                {t("instanda.useCase2Title")}
               </h3>
-              <p className="text-white">
-                Optimized consumer-facing flows for getting quotes, comparing
-                options, and completing purchases. Designed to reduce friction
-                and increase conversion rates.
-              </p>
+              <p className="text-white">{t("instanda.useCase2Text")}</p>
             </motion.div>
 
             <motion.div
@@ -360,12 +340,9 @@ const InstandaFrontendSpecialist = () => {
               className="bg-secondary p-6 rounded-lg"
             >
               <h3 className="text-xl font-semibold text-primary mb-3">
-                Product Landing Pages
+                {t("instanda.useCase3Title")}
               </h3>
-              <p className="text-white">
-                Marketing pages that connect to Instanda for quote requests and
-                lead generation. Seamless integration with your platform's APIs.
-              </p>
+              <p className="text-white">{t("instanda.useCase3Text")}</p>
             </motion.div>
 
             <motion.div
@@ -376,13 +353,9 @@ const InstandaFrontendSpecialist = () => {
               className="bg-secondary p-6 rounded-lg"
             >
               <h3 className="text-xl font-semibold text-primary mb-3">
-                Conversion Optimization
+                {t("instanda.useCase4Title")}
               </h3>
-              <p className="text-white">
-                Analyzing and improving existing Instanda frontends. A/B
-                testing, UX improvements, and performance optimization to boost
-                key metrics.
-              </p>
+              <p className="text-white">{t("instanda.useCase4Text")}</p>
             </motion.div>
           </div>
         </div>
@@ -399,7 +372,8 @@ const InstandaFrontendSpecialist = () => {
             className="mb-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
-              Why Work <span className="text-primary">With Me</span>
+              {t("instanda.whyTitle")}{" "}
+              <span className="text-primary">{t("instanda.whyTitleEnd")}</span>
             </h2>
             <div className="w-16 h-1 bg-primary mx-auto mb-8"></div>
           </motion.div>
@@ -414,13 +388,9 @@ const InstandaFrontendSpecialist = () => {
                 className="bg-secondary-light p-6 rounded-lg"
               >
                 <h3 className="text-xl font-semibold text-primary mb-3">
-                  Deep Platform Knowledge
+                  {t("instanda.why1Title")}
                 </h3>
-                <p className="text-white">
-                  4+ years of hands-on experience with Instanda. I understand
-                  the APIs, data models, and common integration patterns. No
-                  learning curve.
-                </p>
+                <p className="text-white">{t("instanda.why1Text")}</p>
               </motion.div>
 
               <motion.div
@@ -431,13 +401,9 @@ const InstandaFrontendSpecialist = () => {
                 className="bg-secondary-light p-6 rounded-lg"
               >
                 <h3 className="text-xl font-semibold text-primary mb-3">
-                  Faster Delivery
+                  {t("instanda.why2Title")}
                 </h3>
-                <p className="text-white">
-                  Proven architecture patterns and reusable components mean
-                  projects move quickly. You'll see working prototypes faster
-                  than starting from scratch.
-                </p>
+                <p className="text-white">{t("instanda.why2Text")}</p>
               </motion.div>
 
               <motion.div
@@ -448,13 +414,9 @@ const InstandaFrontendSpecialist = () => {
                 className="bg-secondary-light p-6 rounded-lg"
               >
                 <h3 className="text-xl font-semibold text-primary mb-3">
-                  Insurance Workflow Understanding
+                  {t("instanda.why3Title")}
                 </h3>
-                <p className="text-white">
-                  Beyond just frontend code, I understand insurance business
-                  processes: underwriting, policy management, claims, and agent
-                  workflows. This context leads to better solutions.
-                </p>
+                <p className="text-white">{t("instanda.why3Text")}</p>
               </motion.div>
 
               <motion.div
@@ -465,13 +427,9 @@ const InstandaFrontendSpecialist = () => {
                 className="bg-secondary-light p-6 rounded-lg"
               >
                 <h3 className="text-xl font-semibold text-primary mb-3">
-                  No Core Platform Risk
+                  {t("instanda.why4Title")}
                 </h3>
-                <p className="text-white">
-                  My approach keeps your Instanda core untouched. Your platform
-                  remains stable, updatable, and compliant—while your frontend
-                  gets the improvements it needs.
-                </p>
+                <p className="text-white">{t("instanda.why4Text")}</p>
               </motion.div>
             </div>
           </div>
@@ -489,27 +447,25 @@ const InstandaFrontendSpecialist = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Let's Improve Your{" "}
-              <span className="text-primary">Instanda Frontend</span>
+              {t("instanda.ctaTitle")}{" "}
+              <span className="text-primary">{t("instanda.ctaTitleEnd")}</span>
             </h2>
             <div className="w-16 h-1 bg-primary mx-auto mb-8"></div>
             <p className="text-lg text-white mb-8 leading-relaxed">
-              Ready to enhance your insurance platform's frontend? Let's discuss
-              your specific needs and how a custom frontend layer can improve
-              conversion rates, user experience, and agent productivity.
+              {t("instanda.ctaText")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:Luishenriquezj007@gmail.com"
                 className="inline-block px-8 py-4 bg-primary hover:bg-primary-dark text-secondary font-semibold rounded-md transition-colors text-lg"
               >
-                Get in Touch
+                {t("instanda.ctaButton")}
               </a>
               <a
                 href="/"
                 className="inline-block px-8 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-secondary font-semibold rounded-md transition-colors text-lg"
               >
-                View Portfolio
+                {t("instanda.ctaButton2")}
               </a>
             </div>
             <p className="text-white mt-8 text-sm">
@@ -524,7 +480,8 @@ const InstandaFrontendSpecialist = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </Layout>
   );
 };
 
