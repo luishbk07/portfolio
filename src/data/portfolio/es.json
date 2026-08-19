@@ -122,6 +122,19 @@
     ],
     "projects": [
         {
+            "id": 7,
+            "title": "Kortao",
+            "description": "Aplicación para reservar citas en barberías, spas, consultorios médicos o cualquier servicio basado en citas. Permite configurar horarios, servicios con fecha y precio, ubicación, y notificaciones por correo electrónico y WhatsApp. Más funciones en desarrollo.",
+            "technologies": [
+                "Citas",
+                "Horarios",
+                "Correo electrónico",
+                "WhatsApp"
+            ],
+            "demo": "https://kortao.com",
+            "github": null
+        },
+        {
             "id": 1,
             "title": "Pouch Agent Platform",
             "description": "Portal de agentes personalizado construido sobre la plataforma Instanda. Incluye gestión de pólizas, seguimiento de clientes y flujos de trabajo optimizados de cotización. Optimizado para conversión y experiencia de usuario.",
@@ -174,7 +187,7 @@
         {
             "id": 6,
             "title": "ATL Software Products",
-            "description": "Various applications developed with Angular for ATL-Software.",
+            "description": "Varias aplicaciones desarrolladas con Angular para ATL-Software.",
             "technologies": [
                 "Angular 11+",
                 "Bootstrap",

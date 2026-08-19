@@ -122,6 +122,19 @@
     ],
     "projects": [
         {
+            "id": 7,
+            "title": "Kortao",
+            "description": "Appointment booking app for barbershops, spas, doctors, and any appointment-based service. Set schedules, services with dates and prices, locations, and send notifications via email and WhatsApp. More features are in development.",
+            "technologies": [
+                "Appointments",
+                "Scheduling",
+                "Email",
+                "WhatsApp"
+            ],
+            "demo": "https://kortao.com",
+            "github": null
+        },
+        {
             "id": 1,
             "title": "Pouch Agent Platform",
             "description": "Custom agent portal built on Instanda platform. Features policy management, client tracking, and streamlined quote-to-bind workflows. Optimized for conversion and user experience.",
